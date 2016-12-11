@@ -22,6 +22,15 @@ import sbt.Keys._
 import sbt._
 
 trait CompilerSettings extends ProjectSettings {
+  val consoleDisabledScalacOpts = Set(
+    "-Ywarn-value-discard",
+    "-Ywarn-dead-code",
+    "-Ywarn-unused",
+    "-Ywarn-unused-import",
+    "-Xlint",
+    "-Xfatal-warnings"
+  )
+
   override def projectSettings : Seq[Setting[_]] = super.projectSettings ++ Seq(
     scalaVersion := "2.11.8",
     scalacOptions ++= Seq(
@@ -45,6 +54,9 @@ trait CompilerSettings extends ProjectSettings {
       case "2.11" => "-target:jvm-1.6"
       case "2.12" => "-target:jvm-1.8"
     }},
+    // Turn off a bunch of options when in console
+    scalacOptions in (Compile,console) ~= (_ filterNot consoleDisabledScalacOpts ),
+    scalacOptions in (Test,console) ~= (_ filterNot consoleDisabledScalacOpts ),
     crossScalaVersions := Seq("2.11.8","2.12.1")
   )
 }
