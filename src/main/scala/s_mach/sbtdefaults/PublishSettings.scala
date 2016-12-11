@@ -15,9 +15,7 @@ trait PublishSettings extends ProjectSettings {
         Some("releases" at nexus + "service/local/staging/deploy/maven2")
     },
     pomExtra := (
-      <url>https://github.com/S-Mach/s_mach.
-        {name.value}
-      </url>
+      <url>https://github.com/S-Mach/s_mach.{name.value}</url>
         <licenses>
           <license>
             <name>MIT</name>
@@ -26,15 +24,9 @@ trait PublishSettings extends ProjectSettings {
           </license>
         </licenses>
         <scm>
-          <url>git@github.com:S-Mach/s_mach.
-            {name.value}
-            .git</url>
-          <connection>scm:git:git@github.com:S-Mach/s_mach.
-            {name.value}
-            .git</connection>
-          <developerConnection>scm:git:git@github.com:S-Mach/s_mach.
-            {name.value}
-            .git</developerConnection>
+          <url>git@github.com:S-Mach/s_mach.{name.value}.git</url>
+          <connection>scm:git:git@github.com:S-Mach/s_mach.{name.value}.git</connection>
+          <developerConnection>scm:git:git@github.com:S-Mach/s_mach.{name.value}.git</developerConnection>
         </scm>
         <developers>
           <developer>

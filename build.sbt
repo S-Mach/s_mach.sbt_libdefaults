@@ -19,4 +19,4 @@ addSbtPlugin("com.codacy" % "sbt-codacy-coverage" % "1.3.7")
 addSbtPlugin("com.typesafe.sbt" % "sbt-pgp" % "0.8.3")
 
 // Fix api mappings for common scala libs
-addSbtPlugin("com.thoughtworks.sbt-api-mappings" %% "sbt-api-mappings" % "latest.release")
+addSbtPlugin("com.thoughtworks.sbt-api-mappings" %% "sbt-api-mappings" % "1.0.0")
