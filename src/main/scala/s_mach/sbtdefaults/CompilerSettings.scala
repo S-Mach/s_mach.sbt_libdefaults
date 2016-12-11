@@ -40,10 +40,11 @@ trait CompilerSettings extends ProjectSettings {
       "-Xlint",
       // some projects may need to turn this off
       "-Xfatal-warnings"
-    ),
-    crossScalaVersions := Seq(
-      "2.11.8", // defaults to targeting jdk 1.6
-      "2.12.1" // defaults to targeting jdk 1.8
-    )
+    ) :+ { scalaVersion.value.split('.').take(2).mkString(".") match {
+      case "2.10" => "-target:jvm-1.6"
+      case "2.11" => "-target:jvm-1.6"
+      case "2.12" => "-target:jvm-1.8"
+    }},
+    crossScalaVersions := Seq("2.11.8","2.12.1")
   )
 }
