@@ -41,6 +41,9 @@ trait CompilerSettings extends ProjectSettings {
       // some projects may need to turn this off
       "-Xfatal-warnings"
     ),
-    crossScalaVersions := Seq("2.11.8","2.12.1")
+    crossScalaVersions := Seq(
+      "2.11.8", // defaults to targeting jdk 1.6
+      "2.12.1" // defaults to targeting jdk 1.8
+    )
   )
 }
