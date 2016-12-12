@@ -26,6 +26,10 @@ import scala.util.matching.Regex.Match
 
 // from https://stackoverflow.com/questions/23399495/how-to-link-java-api-classes-using-apimappings
 // (second answer!)
+/**
+  * Settings for looking up scaladoc references to external sources,
+  * such as Java.
+  */
 trait ApiMappingSettings extends ProjectSettings {
   val externalJavadocMap : Map[String,String] = Map(
 //    "owlapi" -> "http://owlcs.github.io/owlapi/apidocs_4_0_2/index.html"

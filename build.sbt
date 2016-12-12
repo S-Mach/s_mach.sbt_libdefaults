@@ -8,6 +8,12 @@ scalacOptions := scalacOptions.value.filter {
   case _ => true
 }
 
+// todo: this doesn't work and sbt-unidoc isn't present
+// todo: at https://repo1.maven.org/maven2/com/eed3si9n/
+//libraryDependencies ++= Seq(
+//  "com.eed3si9n" % "sbt-unidoc_2.10_0.13" % "0.3.3"
+//)
+
 sbtPlugin := true
 
 addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.5.0")

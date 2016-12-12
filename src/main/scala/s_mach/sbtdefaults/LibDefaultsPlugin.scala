@@ -26,7 +26,8 @@ object LibDefaultsPlugin extends
   MiscSettings with
   PublishSettings with
   TestSettings with
-  ApiMappingSettings
+  ApiMappingSettings with
+  UnidocSettings
 {
   object autoImport
 
