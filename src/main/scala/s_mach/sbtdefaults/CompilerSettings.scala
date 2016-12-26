@@ -54,6 +54,10 @@ trait CompilerSettings extends ProjectSettings {
       case "2.11" => "-target:jvm-1.6"
       case "2.12" => "-target:jvm-1.8"
     }},
+    // Relax certain settings for tests
+    scalacOptions in Test ~= (_ filterNot Set(
+      "-Ywarn-value-discard"
+    )),
     // Turn off a bunch of options when in console
     scalacOptions in (Compile,console) ~= (_ filterNot consoleDisabledScalacOpts ),
     scalacOptions in (Test,console) ~= (_ filterNot consoleDisabledScalacOpts ),
